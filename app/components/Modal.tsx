@@ -45,19 +45,10 @@ interface ModalProps {
 
 // Uppercases the first letter of each word in the title
 function titleCase(value: string): string {
-    let title = '';
-    let shouldUpcase = true;
-    for (let i = 0; i < value.length; i++) {
-        if (shouldUpcase) {
-            title += value[i].toUpperCase();
-            shouldUpcase = false;
-        }
-        if (value[i] === ' ') {
-            shouldUpcase = true;
-        }
-    }
-
-    return title;
+    return value
+        .split(' ')
+        .map((word) => word[0].toUpperCase() + word.slice(1))
+        .join(' ');
 }
 
 const Modal = ({movie, position, close}: ModalProps) => {
@@ -116,7 +107,9 @@ const Modal = ({movie, position, close}: ModalProps) => {
         ],
         [],
     );
-
+    console.log('rendering modal');
+    console.log('movie description: ', movie.description);
+    console.log('movie name: ', movie.name);
     return (
         <SwipeToClose y={translationY} opacity={opacity.value} {...{scale}}>
             <Animated.View
