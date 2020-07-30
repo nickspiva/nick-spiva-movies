@@ -66,7 +66,7 @@ const Movie = ({activeMovieId, index, movie, open}: MovieProps) => {
 const getStyles = memoize((width: number, height: number) =>
     StyleSheet.create({
         container: {
-            width: width - 32,
+            width: (width - 32) * 0.8,
             height: height / 2,
             alignSelf: 'center',
             borderRadius: 8,
