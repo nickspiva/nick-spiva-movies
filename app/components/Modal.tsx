@@ -108,8 +108,6 @@ const Modal = ({movie, position, close}: ModalProps) => {
         [],
     );
     console.log('rendering modal');
-    console.log('movie description: ', movie.description);
-    console.log('movie name: ', movie.name);
     return (
         <SwipeToClose y={translationY} opacity={opacity.value} {...{scale}}>
             <Animated.View

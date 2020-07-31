@@ -673,6 +673,7 @@ export class Interactable extends React.PureComponent<InteractableProps> {
     }
 
     render() {
+        console.log('rendering interactable');
         const {onGestureEvent} = this;
         const {
             children,

@@ -49,6 +49,8 @@ const SwipeToClose = ({children, y, opacity, scale: s}: SwipeToCloseProps) => {
         [],
     );
 
+    console.log('rendering swipe to close');
+    // console.log('children: ', children);
     return (
         <View style={StyleSheet.absoluteFill}>
             <Animated.View style={[StyleSheet.absoluteFill, {opacity}]}>
@@ -67,7 +69,9 @@ const SwipeToClose = ({children, y, opacity, scale: s}: SwipeToCloseProps) => {
                 {children}
             </Animated.View>
             <Interactable
-                style={StyleSheet.absoluteFill}
+                style={{
+                    ...StyleSheet.absoluteFillObject,
+                }}
                 snapPoints={[{y: 0}, {y: 100}]}
                 animatedValueY={y}
                 verticalOnly

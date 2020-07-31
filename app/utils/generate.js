@@ -41,10 +41,6 @@ const generateMovies = (moviesCount, reviewsPerMovie) => {
     const movies = times((i) => makeRandomMovie(i), moviesCount);
 
     flatMap((movie) => makeReviews(movie, fuzzCount(reviewsPerMovie)), movies);
-    console.log(
-        'movies gend: ',
-        movies.map((movie) => movie.name),
-    );
     return movies;
 };
 

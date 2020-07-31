@@ -41,13 +41,14 @@ const Movie = ({activeMovieId, index, movie, open}: MovieProps) => {
     const {width, height} = useWindowDimensions();
     const styles = getStyles(width, height);
     const startTransition = async () => {
+        console.log('transitioning on press');
         if (container.current) {
             const position = await measure(container.current.getNode());
             open(index, movie, position);
         }
     };
 
-    console.log('RENDER MOVIE', movie.name);
+    //console.log('RENDER MOVIE', movie.name);
 
     return (
         <TouchableWithoutFeedback onPress={startTransition}>
